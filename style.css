@@ -1,0 +1,785 @@
+/*
+Theme Name: Akademia Karate
+Author: Shiro
+Version: 1.0
+*/
+
+
+
+/* ====== GENERAL STYLES ======  */
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+section {
+   margin-bottom: 25px;
+}
+
+.content-wrapper-height {
+    min-height: 47vh;
+}
+
+
+
+/* ======= HEADER ======   */
+
+ 
+header {
+    background-color: #f4f6f9;
+}
+
+#logo-karate, #logo-karate-footer {
+    width: 300px;
+}
+
+i {
+    color: red;
+}
+
+.icon-link {
+    color: black;  
+}
+
+
+a:hover.icon-link {
+    text-decoration: none;
+    color:black;
+}
+
+
+
+/* ====== MENU STYLES ====== */
+
+.sticky {
+    position:fixed!important;
+    top:0!important;
+    width:100%!important;
+    z-index: 99998!important;
+}
+
+.logged-in-large {
+    margin-top: 32px;
+}
+
+.logged-in-small {
+    margin-top: 46px;
+}
+
+#cssmenu ul.text-centered {
+    text-align: center;
+}
+
+
+#cssmenu {
+    position: relative;
+    height: 44px;
+    background: #2b2f3a;
+    width: auto;
+    line-height: 1.5;
+}
+
+#cssmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    /*  text-align: center;*/
+}
+
+#cssmenu > ul {
+    position: relative;
+    display: block;
+    background: #2b2f3a;
+    width: 100%;
+    z-index: 500;
+}
+
+#cssmenu:after,
+#cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+#cssmenu.align-right > ul > li {
+    float: right;
+}
+
+#cssmenu.align-center ul {
+    text-align: center;
+}
+
+#cssmenu.align-center ul ul {
+    text-align: left;
+}
+
+#cssmenu > ul > li {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#cssmenu > ul > #menu-button {
+    display: none;
+}
+
+#cssmenu ul li a {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+
+#cssmenu > ul > li > a {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+    color: white;
+    text-transform: uppercase;
+    -webkit-transition: color 0.25s ease-out;
+    -moz-transition: color 0.25s ease-out;
+    -ms-transition: color 0.25s ease-out;
+    -o-transition: color 0.25s ease-out;
+    transition: color 0.25s ease-out;
+}
+
+#cssmenu > ul > li.has-sub > a {
+    padding-right: 32px;
+}
+
+#cssmenu > ul > li:hover > a {
+    color: #7a8189;
+}
+
+#cssmenu li.has-sub::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+#cssmenu > ul > li.has-sub::after {
+    right: 10px;
+    top: 20px;
+    border: 5px solid transparent;
+    border-top-color: #7a8189;
+}
+
+#cssmenu > ul > li:hover::after {
+    border-top-color: #ffffff;
+}
+
+#indicatorContainer {
+    position: absolute;
+    height: 12px;
+    width: 100%;
+    bottom: 0px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#pIndicator {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border: 12px solid transparent;
+    border-top-color: #2b2f3a;
+    z-index: -2;
+    -webkit-transition: left .25s ease;
+    -moz-transition: left .25s ease;
+    -ms-transition: left .25s ease;
+    -o-transition: left .25s ease;
+    transition: left .25s ease;
+}
+
+#cIndicator {
+    position: absolute;
+    height: 0;
+    width: 100%;
+    border: 12px solid transparent;
+    border-top-color: #2b2f3a;
+    top: -12px;
+    right: 100%;
+    z-index: -2;
+}
+
+#cssmenu ul ul {
+    position: absolute;
+    left: -9999px;
+    top: 70px;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease, top .25s ease;
+    -moz-transition: opacity .3s ease, top .25s ease;
+    -ms-transition: opacity .3s ease, top .25s ease;
+    -o-transition: opacity .3s ease, top .25s ease;
+    transition: opacity .3s ease, top .25s ease;
+    z-index: 1000;
+}
+
+#cssmenu ul ul ul {
+    top: 37px;
+    padding-left: 5px;
+}
+
+#cssmenu ul ul li {
+    position: relative;
+}
+
+#cssmenu > ul > li:hover > ul {
+    left: auto;
+    top: 44px;
+    opacity: 1;
+}
+
+#cssmenu.align-right > ul > li:hover > ul {
+    left: auto;
+    right: 0;
+    opacity: 1;
+}
+
+#cssmenu ul ul li:hover > ul {
+    left: 125px;
+    top: 0;
+    opacity: 1;
+}
+
+#cssmenu.align-right ul ul li:hover > ul {
+    left: auto;
+    right: 170px;
+    top: 0;
+    opacity: 1;
+    padding-right: 5px;
+}
+
+#cssmenu ul ul li a {
+    width: 130px;
+    /*border-bottom: 1px solid #eeeeee;*/
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #9ea2a5;
+    background: #2b2f3a;
+    -webkit-transition: all .35s ease;
+    -moz-transition: all .35s ease;
+    -ms-transition: all .35s ease;
+    -o-transition: all .35s ease;
+    transition: all .35s ease;
+}
+
+#cssmenu.align-right ul ul li a {
+    text-align: right;
+}
+
+#cssmenu ul ul li:hover > a {
+    background: #f2f2f2;
+    color: #8c9195;
+}
+
+#cssmenu ul ul li:last-child > a,
+#cssmenu ul ul li.last > a {
+    border-bottom: 0;
+}
+
+#cssmenu > ul > li > ul::after {
+    content: '';
+    border: 6px solid transparent;
+    width: 0;
+    height: 0;
+    border-bottom-color: #ffffff;
+    position: absolute;
+    top: -12px;
+    left: 30px;
+}
+
+#cssmenu.align-right > ul > li > ul::after {
+    left: auto;
+    right: 30px;
+}
+
+#cssmenu ul ul li.has-sub::after {
+    border: 4px solid transparent;
+    border-left-color: #9ea2a5;
+    right: 10px;
+    top: 12px;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transition: -webkit-transform 0.2s ease, right 0.2s ease;
+}
+
+#cssmenu.align-right ul ul li.has-sub::after {
+    border-left-color: transparent;
+    border-right-color: #9ea2a5;
+    right: auto;
+    left: 10px;
+}
+
+#cssmenu ul ul li.has-sub:hover::after {
+    border-left-color: #ffffff;
+    right: -5px;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#cssmenu.align-right ul ul li.has-sub:hover::after {
+    border-right-color: #ffffff;
+    border-left-color: transparent;
+    left: -5px;
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    #cssmenu {
+        width: auto;
+    }
+
+    #cssmenu.align-center ul {
+        text-align: left;
+    }
+
+    #cssmenu.align-right > ul > li {
+        float: none;
+    }
+
+    #cssmenu ul {
+        width: auto;
+    }
+
+    #cssmenu .submenuArrow,
+    #cssmenu #indicatorContainer {
+        display: none;
+    }
+
+    #cssmenu > ul {
+        height: auto;
+        display: block;
+    }
+
+    #cssmenu > ul > li {
+        float: none;
+    }
+
+    #cssmenu li,
+    #cssmenu > ul > li {
+        display: none;
+    }
+
+    #cssmenu ul ul,
+    #cssmenu ul ul ul,
+    #cssmenu ul > li:hover > ul,
+    #cssmenu ul ul > li:hover > ul,
+    #cssmenu.align-right ul ul,
+    #cssmenu.align-right ul ul ul,
+    #cssmenu.align-right ul > li:hover > ul,
+    #cssmenu.align-right ul ul > li:hover > ul {
+        position: relative;
+        left: auto;
+        top: auto;
+        opacity: 1;
+        padding-left: 0;
+        padding-right: 0;
+        right: auto;
+    }
+
+    #cssmenu ul .has-sub::after {
+        display: none;
+    }
+
+    #cssmenu ul li a {
+        padding: 12px 20px;
+    }
+
+    #cssmenu ul ul li a {
+        border: 0;
+        background: none;
+        width: auto;
+        padding: 8px 35px;
+    }
+
+    #cssmenu.align-right ul ul li a {
+        text-align: left;
+    }
+
+    #cssmenu ul ul li:hover > a {
+        background: none;
+        color: #8c9195;
+    }
+
+    #cssmenu ul ul ul a {
+        padding: 8px 50px;
+    }
+
+    #cssmenu ul ul ul ul a {
+        padding: 8px 65px;
+    }
+
+    #cssmenu ul ul ul ul ul a {
+        padding: 8px 80px;
+    }
+
+    #cssmenu ul ul ul ul ul ul a {
+        padding: 8px 95px;
+    }
+
+    #cssmenu > ul > #menu-button {
+        display: block;
+        cursor: pointer;
+    }
+
+    #cssmenu #menu-button > a {
+        padding: 14px 20px;
+    }
+
+    #cssmenu ul.open li,
+    #cssmenu > ul.open > li {
+        display: block;
+    }
+
+    #cssmenu > ul.open > li#menu-button > a {
+        color: #fff;
+        border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+    }
+
+    #cssmenu ul ul::after {
+        display: none;
+    }
+
+    #cssmenu #menu-button::after {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 22px;
+        border-top: 2px solid #7a8189;
+        border-bottom: 2px solid #7a8189;
+        right: 20px;
+        top: 15px;
+    }
+
+    #cssmenu #menu-button::before {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 22px;
+        border-top: 2px solid #7a8189;
+        right: 20px;
+        top: 25px;
+    }
+
+    #cssmenu ul.open #menu-button::after,
+    #cssmenu ul.open #menu-button::before {
+        border-color: #fff;
+    }
+}
+
+
+/* ======= FIRST SECTION ======= */
+
+
+.no-padding {
+    padding: 0!important;
+}
+
+section.first-section {
+    height: calc(100vh - 155px);
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.50),
+            rgba(0, 0, 0, 0.50)
+    ), url('assets/karate.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom:0;
+}
+
+.blocquote-footer {
+color: white;
+}
+
+p.phrase {
+    color:white;
+    opacity: 0.8;
+    font-size:30px;
+    max-width:65ch;
+}
+
+.sign {
+    color:white;
+    opacity: 0.8;
+}
+
+
+/* ====== SECTION AKTUALNOSCI ====== */
+
+section.news {
+     background-color: #f4f6f9;
+}
+
+.plakat {
+    width: 350px;
+    height: 475px;
+    object-fit: cover; 
+    margin-top: 10px;
+}
+
+a.more  {
+    color:black;
+}
+
+a {
+    color:black;
+}
+
+a:hover {
+    text-decoration: none;
+    color:red;
+}
+
+a:hover.more{
+    text-decoration: none;
+    color:red;
+}
+
+
+/* =======  DANIEL SECTION  ====== */
+
+h3 p {
+    float: left;
+    text-align: center;
+}
+
+
+
+/* ======= SECTION PROGRAMS ======= */
+
+section.programs {
+    background-color:#f4f6f9;
+}
+
+ img.group-foto {
+    filter:grayscale(40%);
+    width:350px;
+    height:300px;
+    margin-bottom: 20px;
+    transition: all .2s;
+    border-radius:5px;
+}
+
+img.group-foto:hover {
+    transform: scale(1.1);
+    filter:grayscale(0);
+}
+
+
+  /*===== SECTION TRAINERS ========*/
+
+  section.trainers img {
+    width:250px;
+    height:400px;
+    filter:grayscale(70%);
+  }
+
+  
+  /* ========  SECTION LINKI ======= */
+
+img.circle {
+    width: 200px;
+}
+
+section.linki {
+    background-color: #f4f6f9;
+}
+
+
+
+/* ====== FOOTER  ====== */
+
+
+footer.footer {
+    background-color: #3a3737;
+    color: #fff;
+    height:25vh;
+}
+
+footer ul li {
+    margin-left: 16px;
+
+}
+
+ul.footer-menu li {
+    display: inline-block;
+    float:right;
+    align-items:center;
+}
+
+footer a {
+    color:white;
+}
+
+footer ul {
+    list-style:none;
+}
+
+footer ul a:hover {
+    text-decoration: none;
+    color:red;
+}
+
+ul.footer-menu li a {
+    color:white;
+}
+
+ul.linki li a:hover {
+    transition: color 0.5s ease;
+}
+
+
+.footer-link {
+    color:white;
+}
+
+footer i {
+    color:white;
+    transition: color 0.5s ease;
+}
+
+footer i:hover {
+    color:red;
+}
+
+.footer-row {
+    background-color: #3a3737;
+}
+
+#emailModalLabel, .modal-body {
+    color: black;
+}
+
+.modal-link:hover {
+    cursor: pointer;
+}
+ 
+
+
+ /* ======= SECTION KARATE ========= */
+ 
+ section.karate a, 
+ section.akademia a,
+ section.odzywianie a, 
+ section.sklep a, 
+ section.schematy a {
+    color: red;
+ }
+
+
+/* ======   SECTION AKADEMIA ========*/
+
+ section.akademia a:hover {
+    text-decoration:none;
+ }
+
+section.akademia ul li {
+    list-style: none;
+}
+
+
+/* ===== SINGLE PAGE 1,2,3 ======= */
+
+
+img#mecz {
+    width:1000px;
+}
+
+
+
+/* ===== PLAN ZAJĘĆ ==== */
+
+section.zajecia img {
+    width:900px;
+}
+
+
+
+/*  ========  NAUCZYCIELE HTML ======== */
+
+
+img.sensei {
+    width:300px;
+    height:400px;
+    filter:grayscale(100%);
+}
+
+
+img#piramida {
+    width: 500px;
+}
+
+
+
+/* ===== SECTION SKLEP ===== */
+
+
+section.sklep a:hover {
+   text-decoration: none;
+}
+
+section.sklep ul li {
+    list-style: none;
+}
+
+
+
+/* ====== SECTION SCHEMATY =======*/
+
+
+section.schematy a:hover {
+    text-decoration: none;
+}
+
+section.schematy ul li {
+    list-style: none;
+}
+
+
+.p-news {
+    font-size: 15px;
+}
+
+
+#pagination {
+    text-align: center;
+}
+
+
+/************* MODAL FORM ****************/
+
+.wpcf7 {
+    color: black;
+}
+
+#emailModal {
+    z-index: 99999;
+}
+
+
+
+
